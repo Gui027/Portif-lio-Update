@@ -1,33 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portifólio Update</title>
+    <!--=============== BOXICONS ===============-->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
+        integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:100"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:100">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.12/jquery.mousewheel.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
 </head>
+
 <body>
+    <!--=============== NAV ===============-->
+    <div class="nav" id="nav">
+        <nav class="nav__content">
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-chevron-right'></i>
+            </div>
+
+            <a href="#" class="nav__logo">
+                <!-- <i class='bx bxs-heart'></i> -->
+                <img src="assets/logopreta.png" alt="imglogo">
+                <span class="nav__logo-name">Update</span>
+            </a>
+
+            <div class="nav__list">
+                <a href="#" class="nav__link active-link">
+                    <i class='bx bx-home'></i>
+                    <span class="nav__name">Home</span>
+                </a>
+
+                <a href="#" class="nav__link">
+                    <i class='bx bx-info-circle'></i>
+                    <span class="nav__name">Sobre</span>
+                </a>
+
+                <a href="#" class="nav__link">
+                    <i class='bx bx-user'></i>
+                    <span class="nav__name">Clientes</span>
+                </a>
+
+                <a href="#" class="nav__link">
+                    <i class='bx bx-help-circle'></i>
+                    <span class="nav__name">Dúvidas</span>
+                </a>
+
+                <a href="#" class="nav__link">
+                    <i class='bx bx-message-minus'></i>
+                    <span class="nav__name">Contato</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <!--=============== MAIN ===============-->
+    <main class="container section">
+        <h1>Components</h1>
+    </main>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="main.js"></script>
+
     <div class="split-slideshow">
         <div class="slideshow">
             <div class="slider">
                 <div class="item">
-                    <img src="https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-2.jpg" />
+                    <img src="assets/banner1_passaro.jpg" />
                 </div>
                 <div class="item">
-                    <img src="https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-3.jpg" />
+                    <img src="assets/banner2_update.jpg" />
                 </div>
                 <div class="item">
-                    <img src="https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-4.jpg" />
+                    <img src="assets/banner3_update.jpg" />
                 </div>
                 <div class="item">
-                    <img src="https://raw.githubusercontent.com/supahfunk/supah-codepen/master/canyon-1.jpg" />
+                    <img src="assets/banner5_update.jpg" />
                 </div>
             </div>
         </div>
@@ -35,12 +92,18 @@
             <div class="item">Canyon</div>
             <div class="item">Desert</div>
             <div class="item">Erosion</div>
-            <div class="item">Shape</div>
+            <div class="item">UXDESIGN:</div>
+        </div>
+        <div class="slideshow-subtext">
+            <div class="item">Canyon</div>
+            <div class="item">Desert</div>
+            <div class="item">Erosion</div>
+            <div class="item">Design Elegante para grandes experiências em produtos</div>
         </div>
     </div>
-    
-    <a class="the-most" target="_blank" href="https://codepen.io/2017/popular/pens/10/">
-        <img src="https://raw.githubusercontent.com/supahfunk/supah-codepen/master/themost-2017.png">
+
+    <a class="the-most" href="#">
+        <img src="assets/updc_preto.png">
     </a>
     <script>
         var $slider = $('.slideshow .slider'),
@@ -48,16 +111,16 @@
             dragging = false,
             tracking,
             rightTracking;
-    
+
         $sliderRight = $('.slideshow').clone().addClass('slideshow-right').appendTo($('.split-slideshow'));
-    
+
         rightItems = $('.item', $sliderRight).toArray();
         reverseItems = rightItems.reverse();
         $('.slider', $sliderRight).html('');
         for (i = 0; i < maxItems; i++) {
             $(reverseItems[i]).appendTo($('.slider', $sliderRight));
         }
-    
+
         $slider.addClass('slideshow-left');
         $('.slideshow-left').slick({
             vertical: true,
@@ -68,16 +131,19 @@
             speed: 1000,
             cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
         }).on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-    
+
             if (currentSlide > nextSlide && nextSlide == 0 && currentSlide == maxItems - 1) {
                 $('.slideshow-right .slider').slick('slickGoTo', -1);
                 $('.slideshow-text').slick('slickGoTo', maxItems);
+                $('.slideshow-subtext').slick('slickGoTo', maxItems);
             } else if (currentSlide < nextSlide && currentSlide == 0 && nextSlide == maxItems - 1) {
                 $('.slideshow-right .slider').slick('slickGoTo', maxItems);
                 $('.slideshow-text').slick('slickGoTo', -1);
+                $('.slideshow-subtext').slick('slickGoTo', -1);
             } else {
                 $('.slideshow-right .slider').slick('slickGoTo', maxItems - 1 - nextSlide);
                 $('.slideshow-text').slick('slickGoTo', nextSlide);
+                $('.slideshow-subtext').slick('slickGoTo', nextSlide);
             }
         }).on("mousewheel", function (event) {
             event.preventDefault();
@@ -102,7 +168,7 @@
         }).on('mouseleave touchend mouseup', function () {
             dragging = false;
         });
-    
+
         $('.slideshow-right .slider').slick({
             swipe: false,
             vertical: true,
@@ -120,6 +186,15 @@
             speed: 900,
             cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
         });
+        $('.slideshow-subtext').slick({
+            swipe: false,
+            vertical: true,
+            arrows: false,
+            infinite: true,
+            speed: 900,
+            cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
+        });
     </script>
 </body>
+
 </html>

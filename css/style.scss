@@ -14,27 +14,27 @@ html {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  
+
   .slider {
     width: 100vw;
     height: 100vw;
     z-index: 2;
-    
+
     * {
       outline: none;
     }
-    
+
     .item {
       height: 100vh;
       width: 100vw;
       position: relative;
       overflow: hidden;
       border: none;
-      
+
       .text {
         display: none;
       }
-      
+
       img {
         min-width: 101%;
         min-height: 101%;
@@ -45,7 +45,7 @@ html {
       }
     }
   }
-  
+
   .slick-dots {
     position: fixed;
     z-index: 100;
@@ -58,18 +58,18 @@ html {
     left: auto;
     color: #fff;
     display: block;
-    
+
     li {
       display: block;
       width: 100%;
       height: auto;
-      
+
       & button {
         position: relative;
         width: 20px;
         height: 15px;
         text-align: center;
-        
+
         &:before {
           content: '';
           background: #fff;
@@ -86,7 +86,7 @@ html {
           opacity: 0.6;
         }
       }
-      
+
       &.slick-active {
         button {
           &:before {
@@ -97,13 +97,13 @@ html {
       }
     }
   }
-  
+
   &.slideshow-right {
     left: 0;
     z-index: 1;
     width: 50vw;
     pointer-events: none;
-    
+
     .slider {
       left: 0;
       position: absolute;
@@ -127,24 +127,42 @@ html {
   text-transform: uppercase;
   letter-spacing: 20px;
   line-height: 0.8;
-  
+
   @media (max-width: 767px) {
     font-size: 40px;
   }
-  
+
 }
 
 
 .the-most {
+  // position: fixed;
+  // z-index: 1;
+  // bottom: 0;
+  // left: 0;
+  // width: 50vw;
+  // max-width: 200px;
+  // padding: 10px;
+
   position: fixed;
+  right: 10px;
+  bottom: 0px;
   z-index: 1;
-  bottom: 0;
-  left: 0;
+  padding: 20px;
+  border-radius: 50px;
+  transition: .5s;
   width: 50vw;
-  max-width: 200px;
-  padding: 10px;
-  
+  max-width: 170px;
+
   img {
     max-width: 100%;
   }
+}
+
+.the-most:hover {
+  right: 0;
+  bottom: 0;
+  border-radius: 140px 0px 0px 0px;
+  padding: 70px;
+  transition: .5s;
 }
