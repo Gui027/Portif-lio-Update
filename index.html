@@ -96,9 +96,16 @@
         </div>
         <div class="slideshow-subtext">
             <div class="item">Canyon</div>
-            <div class="item">Não precisamos de grandes ideias. Apenas protótipos rápidos para resultados de alto nível.</div>
+            <div class="item">Não precisamos de grandes ideias. Apenas protótipos rápidos para resultados de alto nível.
+            </div>
             <div class="item">Invista primeiro em aplicativos para obter melhores resultados.</div>
             <div class="item">Design Elegante para grandes experiências em produtos, serviços e marcas.</div>
+        </div>
+        <div class="slideshow-buttons">
+            <div class="teste"><Button class="button">Testando</Button></div>
+            <div class="item"><Button>Teste</Button></div>
+            <div class="item"><Button>Teste</Button></div>
+            <div class="item"><Button>Design It!</Button></div>
         </div>
     </div>
 
@@ -136,14 +143,17 @@
                 $('.slideshow-right .slider').slick('slickGoTo', -1);
                 $('.slideshow-text').slick('slickGoTo', maxItems);
                 $('.slideshow-subtext').slick('slickGoTo', maxItems);
+                $('.slideshow-buttons').slick('slickGoTo', maxItems);
             } else if (currentSlide < nextSlide && currentSlide == 0 && nextSlide == maxItems - 1) {
                 $('.slideshow-right .slider').slick('slickGoTo', maxItems);
                 $('.slideshow-text').slick('slickGoTo', -1);
                 $('.slideshow-subtext').slick('slickGoTo', -1);
+                $('.slideshow-buttons').slick('slickGoTo', -1);
             } else {
                 $('.slideshow-right .slider').slick('slickGoTo', maxItems - 1 - nextSlide);
                 $('.slideshow-text').slick('slickGoTo', nextSlide);
                 $('.slideshow-subtext').slick('slickGoTo', nextSlide);
+                $('.slideshow-buttons').slick('slickGoTo', nextSlide);
             }
         }).on("mousewheel", function (event) {
             event.preventDefault();
@@ -187,6 +197,14 @@
             cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
         });
         $('.slideshow-subtext').slick({
+            swipe: false,
+            vertical: true,
+            arrows: false,
+            infinite: true,
+            speed: 900,
+            cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
+        });
+        $('.slideshow-buttons').slick({
             swipe: false,
             vertical: true,
             arrows: false,
