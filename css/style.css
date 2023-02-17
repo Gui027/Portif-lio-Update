@@ -137,7 +137,7 @@ html {
 }
 
 .slideshow-buttons {
-  position: absolute;
+  /* position: absolute; */
   top: 70%;
   left: 29%;
   transform: translate(-50%, -50%);
@@ -154,7 +154,8 @@ html {
   pointer-events: none;
 }
 
-.slideshow-buttons Button {
+
+.slideshow-buttons button {
   width: 250px;
   text-transform: uppercase;
   height: 45px;
@@ -163,6 +164,14 @@ html {
   background-color: #fff;
   border-color: #fff;
   border-style: none;
+}
+
+/* .slideshow-buttons .item button:hover {
+  background-color: #110101;
+} */
+
+.item button:hover {
+  color: #110101;
 }
 
 .slideshow-subtext {
