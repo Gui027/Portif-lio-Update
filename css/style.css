@@ -111,7 +111,7 @@ html {
 
 .slideshow-text {
 
-  position: absolute;
+  /* position: absolute; */
   top: 25%;
   left: 17.4%;
   transform: translate(-50%, -50%);
@@ -136,22 +136,26 @@ html {
   margin-left: 45px;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
 .slideshow-buttons {
-  position: absolute;
-  top: 70%;
+  /* position: absolute; */
+  /* top: 70%;
   left: 29%;
-  transform: translate(-50%, -50%);
-  z-index: 200;
+  transform: translate(-50%, -50%); */
+  z-index: 95;
   font-size: 50px;
   width: 550px;
   height: 100px;
-  margin-left: -180px;
+  /* margin-left: -180px; */
   text-align: center;
   color: #fff;
   /* background-color: #fff; */
   font-family: "Roboto Condensed", sans-serif;
   font-weight: 100;
-
 }
 
 .slideshow-buttons button:hover {
@@ -174,10 +178,10 @@ html {
 
 .slideshow-subtext {
 
-  position: absolute;
-  top: 35%;
-  left: 29%;
-  transform: translate(-50%, -50%);
+  /* position: absolute; */
+  /* top: 35%;
+  left: 29%; */
+  /* transform: translate(-50%, -50%); */
   z-index: 95;
   font-size: 50px;
   width: 550px;
